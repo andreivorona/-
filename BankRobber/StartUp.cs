@@ -16,7 +16,7 @@
             List<string> indicationsOfwitnesses = new List<string>();
 
             List<string> notGuilty = new List<string>();
-          
+
             for (int i = 0; i < numberOfPersons; i++)
             {
                 Console.WriteLine("Please add name of witnes");
@@ -50,9 +50,19 @@
                 namesOfwitnesses.Remove(name);
             }
 
-            foreach (string name in namesOfwitnesses)
+            if (namesOfwitnesses.Count == 1)
             {
-                Console.WriteLine($"The guilty is: {name}");
+                Console.WriteLine($"The guilty is: {namesOfwitnesses[0]}");
+            }
+
+            else if (namesOfwitnesses.Count == numberOfPersons)
+            {
+                Console.WriteLine($"The guilty is: {namesOfwitnesses[0]}");
+            }
+
+            else if (namesOfwitnesses.Count == 0)
+            {
+                Console.WriteLine($"The guilty is: {notGuilty[0]}");
             }
         }
     }
